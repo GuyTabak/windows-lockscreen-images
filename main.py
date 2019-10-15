@@ -1,4 +1,4 @@
-from os import listdir, path, stat, getcwd, mkdir
+from os import listdir, path, stat, mkdir
 from typing import List, Tuple
 from shutil import copyfile
 from sys import exit
@@ -67,9 +67,9 @@ if __name__ == '__main__':
     if not bg_image_list:
         exit()
 
-    current_dir = getcwd()
-    horizontal_img_dir = path.join(current_dir, 'Horizontal-Background-Images')
-    vertical_img_dir = path.join(current_dir, 'Vertical-Background-Images')
+    save_dir = path.expanduser(r'~\Desktop')
+    horizontal_img_dir = path.join(save_dir, 'Horizontal-Background-Images')
+    vertical_img_dir = path.join(save_dir, 'Vertical-Background-Images')
 
     if not path.isdir(horizontal_img_dir):
         mkdir(horizontal_img_dir)
